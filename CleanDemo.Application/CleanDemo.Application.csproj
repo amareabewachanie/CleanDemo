@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Births\Commands\Delete\" />
+    <Folder Include="Features\Births\Commands\Update\" />
+    <Folder Include="Features\Births\Queries\" />
+    <Folder Include="Features\Death\" />
+    <Folder Include="Features\Marriage\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.9.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleanDemo.Domain\CleanDemo.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
