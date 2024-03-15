@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNetCoreRateLimit" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.28">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -18,6 +19,10 @@
   <ItemGroup>
     <ProjectReference Include="..\CleanDemo.Application\CleanDemo.Application.csproj" />
     <ProjectReference Include="..\CleanDemo.Persistence\CleanDemo.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MiddleWares\" />
   </ItemGroup>
 
 </Project>

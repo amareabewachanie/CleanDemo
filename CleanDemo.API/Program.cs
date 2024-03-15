@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 var app = builder
-    .ConfigureServices().ConfgiurePipeline();
+    .ConfigureServices().ConfigurePipeline();
 await app.ResetDatabaseAsync();
 
 app.Run();

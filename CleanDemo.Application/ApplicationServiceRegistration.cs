@@ -7,7 +7,9 @@ namespace CleanDemo.Application
         public static IServiceCollection AddApplicationService(this IServiceCollection services)
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddMediatR(config=>config.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
+            services.AddMediatR(config=>
+                config.RegisterServicesFromAssemblies(
+                    AppDomain.CurrentDomain.GetAssemblies()));
             return services;
         }
     }

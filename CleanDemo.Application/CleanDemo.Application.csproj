@@ -7,9 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Births\Commands\Delete\" />
-    <Folder Include="Features\Births\Commands\Update\" />
-    <Folder Include="Features\Births\Queries\" />
     <Folder Include="Features\Death\" />
     <Folder Include="Features\Marriage\" />
   </ItemGroup>

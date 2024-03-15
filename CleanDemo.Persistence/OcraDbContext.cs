@@ -1,17 +1,14 @@
 ﻿using CleanDemo.Domain.Common;
 using CleanDemo.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CleanDemo.Persistence
 {
     public class OcraDbContext : DbContext
     {
-        public OcraDbContext(DbContextOptions<OcraDbContext> option):base(option)
+        public OcraDbContext(DbContextOptions<OcraDbContext> option)
+            :base(option)
         {
             
         }
@@ -20,8 +17,10 @@ namespace CleanDemo.Persistence
         public DbSet<Marriage> Marriages { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(OcraDbContext).Assembly);
-            modelBuilder.Entity<Marriage>()
+            modelBuilder
+                .ApplyConfigurationsFromAssembly(typeof(OcraDbContext).Assembly);
+            modelBuilder
+                .Entity<Marriage>()
             .HasOne(m => m.Husband)
             .WithMany()
             .OnDelete(DeleteBehavior.ClientNoAction);
@@ -33,7 +32,8 @@ namespace CleanDemo.Persistence
         }
 
 
-        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken 
+            = new CancellationToken())
         {
             foreach (var entity in ChangeTracker.Entries<AuditableEntity>()) {
                 switch (entity.State)

@@ -11,7 +11,8 @@ namespace CleanDemo.Persistence
         {
             services.AddDbContext<OcraDbContext>(
                                 option =>
-                                option.UseSqlServer("server=./;DataBase=OCRADB;Trusted_Connection=True;")
+                                option
+                                    .UseSqlServer("server=./;DataBase=OCRADB;Trusted_Connection=True;")
                 ); 
             services.AddScoped(typeof(IAsyncRepository<>),typeof(BaseRepository<>));
             services.AddScoped<IBirthRepository, BirthRepository>();
